@@ -1,11 +1,18 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class HangmanTest {
+    private Hangman hangman;
+
+    @Before
+    public void setUp() throws Exception {
+        hangman = new Hangman();
+    }
+
     @Test
     public void should_game_start() {
         //give
-        Hangman hangman = new Hangman();
         String word = "WORD";
         //when
         hangman.start(word);
@@ -20,7 +27,6 @@ public class HangmanTest {
     @Test
     public void should_game_start_2() {
         //give
-        Hangman hangman = new Hangman();
         String word = "HELLO";
         //when
         hangman.start(word);
@@ -35,7 +41,6 @@ public class HangmanTest {
     @Test
     public void should_try_correct() {
         //give
-        Hangman hangman = new Hangman();
         String word = "WORD";
         hangman.start(word);
         //when
@@ -50,7 +55,6 @@ public class HangmanTest {
     @Test
     public void should_try_incorrect() {
         //give
-        Hangman hangman = new Hangman();
         String word = "WORD";
         hangman.start(word);
         //when
@@ -65,7 +69,6 @@ public class HangmanTest {
     @Test
     public void should_win() {
         //give
-        Hangman hangman = new Hangman();
         String word = "WORD";
         hangman.start(word);
         //when
@@ -80,9 +83,8 @@ public class HangmanTest {
     }
 
     @Test
-    public void should_game_over(){
+    public void should_game_over() {
         //give
-        Hangman hangman = new Hangman();
         String word = "WORD";
         hangman.start(word);
         //when
